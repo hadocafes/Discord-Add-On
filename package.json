@@ -3,9 +3,6 @@
   "version": "14.0.1",
   "description": "bot para pasarla bien con los amigos jugando en Discord",
   "main": "index.js",
-  "scripts": {
-    "test": "console.log('test');"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hadocafes/Noche-de-Juegos.git"

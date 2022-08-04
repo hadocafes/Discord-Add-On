@@ -13,5 +13,7 @@ module.exports = {
             status: 'idle'
         });
 
+        console.log('¡Estoy listo!')
+
     }
 }

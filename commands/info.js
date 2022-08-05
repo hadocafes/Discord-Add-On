@@ -14,17 +14,16 @@ module.exports = {
         const embed = new EmbedBuilder()
             .setTitle(`Información sobre ${member.displayName}`)
             .setColor('Blurple')
-            .setThumbnail(member.displayAvatarURL({ dynamic: true, size: 1024 }))
-            mensajeaislado = ''
+            .setThumbnail(member.displayAvatarURL({ dynamic: true, size: 1024 }));
 
-            if (member.communicationDisabledUntilTimestamp) {
+            if (member.communicationDisabledUntilTimestamp > interaction.createdTimestamp) {
 
                 description = `<:timeout:1004862353738829834> Caduca <t:${Math.floor(member.communicationDisabledUntilTimestamp / 1000)}:R>\n` + description
 
-            } 
+            }
             
             embed.addFields({ name: 'Usuario', value: `**Nombre de Usuario:** ${user.username}\n**ID:** \`${user.id}\`\n**Perfil:** ${user}\n**Creado el** <t:${Math.floor(user.createdTimestamp / 1000)}:F> [<t:${Math.floor(user.createdTimestamp / 1000)}:R>]\n**Se ha unido el** <t:${Math.floor(member.joinedTimestamp / 1000)}:F> [<t:${Math.floor(member.joinedTimestamp / 1000)}:R>]`})
-            .setDescription(description)
+            .setDescription(description);
 
         interaction.reply({ embeds: [embed], ephemeral: true });
 

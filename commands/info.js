@@ -8,6 +8,8 @@ module.exports = {
 
         const member = interaction.targetMember;
         const user = interaction.targetUser;
+
+        if (!member) return interaction.reply({ content: 'Lo siento, pero por el bien del usuario no daré datos de los que no están en el servidor.', ephemeral: true });
         let description = `${member.roles.cache.filter((roles) => roles.id !== interaction.guild.id).map((role) => role.toString()).join(' ')}`;
 
         if (description === '') description = ':new_moon: *sin ningún rol*'
